@@ -488,12 +488,7 @@
         }
 
         nav {
-          gap: 0.75rem;
-          flex-wrap: wrap;
-        }
-
-        nav a {
-          font-size: 0.9rem;
+          display: none;
         }
 
         .support-grid {
@@ -595,6 +590,70 @@
       </div>
     </section>
 
+    <!-- How We Support You -->
+    <section style="background: var(--bg-darker)">
+      <div class="container">
+        <h2 class="section-title">Support Channels</h2>
+        <p class="section-subtitle">
+          Explore our tailored support channels designed to deliver expert
+          assistance, seamlessly and efficiently—whenever you need it.
+        </p>
+
+        <div class="support-channels">
+          <div class="channel-card">
+            <div class="channel-icon">
+              <i data-lucide="mail"></i>
+            </div>
+            <div class="response-time">Response time: 2-5 seconds</div>
+            <h3>Instant Email Support</h3>
+            <p>
+              <span class="channel-highlight">Get instant responses</span> to
+              your inquiries with our advanced AI-powered email support system.
+              Receive detailed, accurate answers to complex technical questions
+              and product inquiries within minutes.
+              <a
+                href="mailto:019a309a-d10c-720a-96e4-3fc6ddf5ca46@inbound.typewise.app"
+                style="
+                  color: #60a5fa;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 0.95rem;
+                  background: rgba(96, 165, 250, 0.1);
+                  padding: 0.25rem 0.75rem;
+                  border-radius: 9999px;
+                  border: 1px solid rgba(96, 165, 250, 0.2);
+                  display: inline;
+                  transition: all 0.2s ease;
+                "
+                onmouseover="this.style.background='rgba(96, 165, 250, 0.15)'; this.style.borderColor='rgba(96, 165, 250, 0.3)'"
+                onmouseout="this.style.background='rgba(96, 165, 250, 0.1)'; this.style.borderColor='rgba(96, 165, 250, 0.2)'"
+                >Start your conversation</a
+              >
+            </p>
+          </div>
+
+          <div class="channel-card">
+            <div class="channel-icon">
+              <i data-lucide="message-circle"></i>
+            </div>
+            <div class="response-time">Response time: 10-30 seconds</div>
+            <h3>Live Chat Support</h3>
+            <p>
+              <span class="channel-highlight">Connect instantly</span> with our
+              support team through our live chat system. Available 24/7 for
+              immediate assistance with urgent questions, order modifications,
+              and real-time problem resolution.
+              <strong
+                >You can find the live chat widget at the bottom of this
+                page</strong
+              >
+              - simply click to start chatting with our expert support team.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Support Categories -->
     <section>
       <div class="container">
@@ -668,70 +727,6 @@
             <p>
               Verify warranty coverage, register products, and submit repair
               requests
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How We Support You -->
-    <section style="background: var(--bg-darker)">
-      <div class="container">
-        <h2 class="section-title">Support Channels</h2>
-        <p class="section-subtitle">
-          Choose from our comprehensive support options to get assistance when
-          you need it most
-        </p>
-
-        <div class="support-channels">
-          <div class="channel-card">
-            <div class="channel-icon">
-              <i data-lucide="mail"></i>
-            </div>
-            <div class="response-time">Response time: 10-30 seconds</div>
-            <h3>Instant Email Support</h3>
-            <p>
-              <span class="channel-highlight">Get instant responses</span> to
-              your inquiries with our advanced AI-powered email support system.
-              Receive detailed, accurate answers to complex technical questions
-              and product inquiries within minutes.
-              <a
-                href="mailto:019a309a-d10c-720a-96e4-3fc6ddf5ca46@inbound.typewise.app"
-                style="
-                  color: #60a5fa;
-                  text-decoration: none;
-                  font-weight: 500;
-                  font-size: 0.95rem;
-                  background: rgba(96, 165, 250, 0.1);
-                  padding: 0.25rem 0.75rem;
-                  border-radius: 9999px;
-                  border: 1px solid rgba(96, 165, 250, 0.2);
-                  display: inline;
-                  transition: all 0.2s ease;
-                "
-                onmouseover="this.style.background='rgba(96, 165, 250, 0.15)'; this.style.borderColor='rgba(96, 165, 250, 0.3)'"
-                onmouseout="this.style.background='rgba(96, 165, 250, 0.1)'; this.style.borderColor='rgba(96, 165, 250, 0.2)'"
-                >Start your conversation</a
-              >
-            </p>
-          </div>
-
-          <div class="channel-card">
-            <div class="channel-icon">
-              <i data-lucide="message-circle"></i>
-            </div>
-            <div class="response-time">Response time: 10-30 seconds</div>
-            <h3>Live Chat Support</h3>
-            <p>
-              <span class="channel-highlight">Connect instantly</span> with our
-              support team through our live chat system. Available 24/7 for
-              immediate assistance with urgent questions, order modifications,
-              and real-time problem resolution.
-              <strong
-                >You can find the live chat widget at the bottom of this
-                page</strong
-              >
-              - simply click to start chatting with our expert support team.
             </p>
           </div>
         </div>
@@ -840,10 +835,6 @@
       <div class="footer-bottom">
         <p>
           &copy; 2025 ElectroMart. All rights reserved. This is a demo page.
-        </p>
-        <p class="powered-by">
-          Customer support technology powered by
-          <a href="https://www.typewise.app/" target="_blank">Typewise</a>
         </p>
       </div>
     </footer>

@@ -3,30 +3,577 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Support - ElectroMart | Powered by Typewise</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+        * {
             margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .container {
+
+        :root {
+            --primary-blue: #3C70F6;
+            --primary-blue-dark: #1B51C5;
+            --accent-blue: #2076ff;
+            --text-dark: #1a202c;
+            --text-gray: #4a5568;
+            --text-light: #718096;
+            --bg-light: #f7fafc;
+            --bg-white: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--bg-white);
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        .typewise-badge {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-light);
+            border-radius: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+            color: white;
+            padding: 5rem 2rem;
             text-align: center;
         }
-        h1 {
-            font-size: 4rem;
-            margin: 0;
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Section */
+        section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1.125rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Support Categories Grid */
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .support-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .support-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(60, 112, 246, 0.15);
+            border-color: var(--primary-blue);
+        }
+
+        .support-card-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .support-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        .support-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* How We Support Section */
+        .support-channels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .channel-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .channel-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+            color: white;
+        }
+
+        .channel-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .channel-card p {
+            color: var(--text-gray);
+        }
+
+        .channel-highlight {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        /* FAQ Section */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .faq-item h4 {
+            font-size: 1.125rem;
+            color: var(--text-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-item p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: var(--primary-blue);
+            padding: 1rem 2.5rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 3rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1.125rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .powered-by {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .powered-by a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Hello World!</h1>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">ElectroMart</div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#support">Support</a>
+                <span class="typewise-badge">Powered by Typewise</span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>We're Here to Help</h1>
+        <p>Get instant support for all your questions. Our team is available 24/7 to assist you with orders, products, and technical issues.</p>
+    </section>
+
+    <!-- Support Categories -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">How Can We Assist You?</h2>
+            <p class="section-subtitle">Browse through our support categories or chat with us directly for instant help</p>
+
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-card-icon">📦</div>
+                    <h3>Order & Delivery</h3>
+                    <p>Track your order, check delivery status, or modify your shipping address</p>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-card-icon">🔄</div>
+                    <h3>Returns & Refunds</h3>
+                    <p>Initiate a return, check refund status, or learn about our return policy</p>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-card-icon">📱</div>
+                    <h3>Product Information</h3>
+                    <p>Get detailed specs, compatibility info, and product recommendations</p>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-card-icon">🔧</div>
+                    <h3>Technical Support</h3>
+                    <p>Troubleshoot issues, setup guides, and technical assistance</p>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-card-icon">💳</div>
+                    <h3>Account & Payment</h3>
+                    <p>Manage your account, payment methods, and billing information</p>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-card-icon">🛡️</div>
+                    <h3>Warranty & Repairs</h3>
+                    <p>Check warranty coverage, register products, or request repairs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How We Support You -->
+    <section style="background: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">How We Support You</h2>
+            <p class="section-subtitle">Multiple ways to get the help you need, when you need it</p>
+
+            <div class="support-channels">
+                <div class="channel-card">
+                    <div class="channel-icon">💬</div>
+                    <h3>Live Chat</h3>
+                    <p><span class="channel-highlight">Instant responses</span> powered by Typewise AI. Get answers in seconds, 24/7.</p>
+                </div>
+
+                <div class="channel-card">
+                    <div class="channel-icon">✉️</div>
+                    <h3>Email Support</h3>
+                    <p>Detailed assistance for complex issues. Response within <span class="channel-highlight">2 hours</span>.</p>
+                </div>
+
+                <div class="channel-card">
+                    <div class="channel-icon">📞</div>
+                    <h3>Phone Support</h3>
+                    <p>Speak directly with our team. Available <span class="channel-highlight">Mon-Fri 8AM-8PM</span>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Topics -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Popular Topics</h2>
+            <p class="section-subtitle">Quick answers to frequently asked questions</p>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h4>How long does delivery take?</h4>
+                    <p>Standard delivery takes 3-5 business days. Express delivery is available for next-day delivery in most areas.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>What is your return policy?</h4>
+                    <p>We offer a 30-day return policy on most items. Products must be in original condition with all packaging and accessories.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>Do you offer price matching?</h4>
+                    <p>Yes! We match prices from authorized retailers. Contact us with the competitor's price and we'll match it.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>How do I track my order?</h4>
+                    <p>You'll receive a tracking number via email once your order ships. Use it on our tracking page or the carrier's website.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h4>What payment methods do you accept?</h4>
+                    <p>We accept all major credit cards, PayPal, Apple Pay, and Google Pay. Financing options are available for purchases over $500.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="cta-section">
+        <h2>Can't Find What You're Looking For?</h2>
+        <p>Our support team is ready to help you with any questions</p>
+        <button class="cta-button" onclick="alert('This is where the Typewise chat widget would open!\n\nIn a real implementation, this would trigger the Typewise chat interface.')">Start Live Chat</button>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>ElectroMart</h4>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#press">Press</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#help">Help Center</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="#returns">Returns</a></li>
+                    <li><a href="#warranty">Warranty</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Shop</h4>
+                <ul>
+                    <li><a href="#smartphones">Smartphones</a></li>
+                    <li><a href="#laptops">Laptops</a></li>
+                    <li><a href="#tablets">Tablets</a></li>
+                    <li><a href="#accessories">Accessories</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#cookies">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 ElectroMart. All rights reserved. This is a demo page.</p>
+            <p class="powered-by">Customer support powered by <a href="https://www.typewise.app/" target="_blank">Typewise</a></p>
+        </div>
+    </footer>
+
+    <!-- Typewise Widget Integration -->
+    <!--
+    To integrate the actual Typewise widget, add your script here:
+
+    <script>
+        // Typewise Widget Configuration
+        window.typewiseConfig = {
+            apiKey: 'YOUR_API_KEY_HERE',
+            // Add your configuration options
+        };
+    </script>
+    <script src="https://widget.typewise.app/widget.js" async></script>
+
+    The widget will automatically appear on your page and handle customer inquiries.
+    -->
+
 </body>
 </html>

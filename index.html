@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support - ElectroMart | Powered by Typewise</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         * {
             margin: 0;
@@ -185,8 +186,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
             margin-bottom: 1rem;
+        }
+
+        .support-card-icon svg {
+            width: 24px;
+            height: 24px;
+            color: white;
         }
 
         .support-card h3 {
@@ -223,8 +229,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
             margin: 0 auto 1.5rem;
+        }
+
+        .channel-icon svg {
+            width: 36px;
+            height: 36px;
             color: white;
         }
 
@@ -420,37 +430,49 @@
 
             <div class="support-grid">
                 <div class="support-card">
-                    <div class="support-card-icon">📦</div>
+                    <div class="support-card-icon">
+                        <i data-lucide="package"></i>
+                    </div>
                     <h3>Order & Delivery</h3>
                     <p>Track your order, check delivery status, or modify your shipping address</p>
                 </div>
 
                 <div class="support-card">
-                    <div class="support-card-icon">🔄</div>
+                    <div class="support-card-icon">
+                        <i data-lucide="refresh-cw"></i>
+                    </div>
                     <h3>Returns & Refunds</h3>
                     <p>Initiate a return, check refund status, or learn about our return policy</p>
                 </div>
 
                 <div class="support-card">
-                    <div class="support-card-icon">📱</div>
+                    <div class="support-card-icon">
+                        <i data-lucide="smartphone"></i>
+                    </div>
                     <h3>Product Information</h3>
                     <p>Get detailed specs, compatibility info, and product recommendations</p>
                 </div>
 
                 <div class="support-card">
-                    <div class="support-card-icon">🔧</div>
+                    <div class="support-card-icon">
+                        <i data-lucide="wrench"></i>
+                    </div>
                     <h3>Technical Support</h3>
                     <p>Troubleshoot issues, setup guides, and technical assistance</p>
                 </div>
 
                 <div class="support-card">
-                    <div class="support-card-icon">💳</div>
+                    <div class="support-card-icon">
+                        <i data-lucide="credit-card"></i>
+                    </div>
                     <h3>Account & Payment</h3>
                     <p>Manage your account, payment methods, and billing information</p>
                 </div>
 
                 <div class="support-card">
-                    <div class="support-card-icon">🛡️</div>
+                    <div class="support-card-icon">
+                        <i data-lucide="shield-check"></i>
+                    </div>
                     <h3>Warranty & Repairs</h3>
                     <p>Check warranty coverage, register products, or request repairs</p>
                 </div>
@@ -466,19 +488,25 @@
 
             <div class="support-channels">
                 <div class="channel-card">
-                    <div class="channel-icon">💬</div>
+                    <div class="channel-icon">
+                        <i data-lucide="message-circle"></i>
+                    </div>
                     <h3>Live Chat</h3>
                     <p><span class="channel-highlight">Instant responses</span> powered by Typewise AI. Get answers in seconds, 24/7.</p>
                 </div>
 
                 <div class="channel-card">
-                    <div class="channel-icon">✉️</div>
+                    <div class="channel-icon">
+                        <i data-lucide="mail"></i>
+                    </div>
                     <h3>Email Support</h3>
                     <p>Detailed assistance for complex issues. Response within <span class="channel-highlight">2 hours</span>.</p>
                 </div>
 
                 <div class="channel-card">
-                    <div class="channel-icon">📞</div>
+                    <div class="channel-icon">
+                        <i data-lucide="phone"></i>
+                    </div>
                     <h3>Phone Support</h3>
                     <p>Speak directly with our team. Available <span class="channel-highlight">Mon-Fri 8AM-8PM</span>.</p>
                 </div>
@@ -593,5 +621,9 @@
     The widget will automatically appear on your page and handle customer inquiries.
     -->
 
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>

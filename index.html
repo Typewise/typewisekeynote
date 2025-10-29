@@ -89,10 +89,11 @@
       .hero {
         background: var(--bg-darker);
         color: white;
-        padding: 6rem 2rem;
+        padding: 10rem 2rem;
         text-align: center;
         position: relative;
         overflow: hidden;
+        min-height: 60vh;
       }
 
       .hero::before {
@@ -112,18 +113,18 @@
       }
 
       .hero h1 {
-        font-size: 4rem;
+        font-size: 5rem;
         font-weight: 800;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
         line-height: 1.1;
         position: relative;
       }
 
       .hero p {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
         color: var(--text-light-gray);
-        max-width: 650px;
-        margin: 0 auto;
+        max-width: 750px;
+        margin: 0 auto 3rem;
         position: relative;
       }
 
@@ -263,15 +264,12 @@
 
       .channel-highlight {
         display: inline-block;
-        background: linear-gradient(
-          135deg,
-          var(--primary-blue),
-          var(--primary-blue-dark)
-        );
+        background: linear-gradient(135deg, #60a5fa, #3b82f6);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         font-weight: 600;
+        filter: brightness(1.3) contrast(1.2);
       }
 
       /* FAQ Section */
@@ -405,8 +403,17 @@
 
       /* Responsive */
       @media (max-width: 768px) {
+        .hero {
+          padding: 8rem 2rem;
+          min-height: 50vh;
+        }
+
         .hero h1 {
-          font-size: 2.5rem;
+          font-size: 3.5rem;
+        }
+
+        .hero p {
+          font-size: 1.25rem;
         }
 
         .section-title {
@@ -439,20 +446,21 @@
 
     <!-- Hero Section -->
     <section class="hero">
-      <h1>We're Here to Help</h1>
+      <h1>Customer Support Center</h1>
       <p>
-        Get instant support for all your questions. Our team is available 24/7
-        to assist you with orders, products, and technical issues.
+        Access comprehensive support resources and expert assistance for all
+        your inquiries. Our dedicated team provides round-the-clock support for
+        orders, products, and technical solutions.
       </p>
     </section>
 
     <!-- Support Categories -->
     <section>
       <div class="container">
-        <h2 class="section-title">How Can We Assist You?</h2>
+        <h2 class="section-title">Support Categories</h2>
         <p class="section-subtitle">
-          Browse through our support categories or chat with us directly for
-          instant help
+          Select from our comprehensive support categories or contact our team
+          directly for immediate assistance
         </p>
 
         <div class="support-grid">
@@ -462,8 +470,8 @@
             </div>
             <h3>Order & Delivery</h3>
             <p>
-              Track your order, check delivery status, or modify your shipping
-              address
+              Track shipments, verify delivery status, update shipping
+              addresses, and manage order modifications
             </p>
           </div>
 
@@ -473,8 +481,8 @@
             </div>
             <h3>Returns & Refunds</h3>
             <p>
-              Initiate a return, check refund status, or learn about our return
-              policy
+              Process returns, track refund status, and access detailed
+              information about our return and refund policies
             </p>
           </div>
 
@@ -484,8 +492,8 @@
             </div>
             <h3>Product Information</h3>
             <p>
-              Get detailed specs, compatibility info, and product
-              recommendations
+              Access detailed specifications, compatibility information, and
+              personalized product recommendations
             </p>
           </div>
 
@@ -494,7 +502,10 @@
               <i data-lucide="wrench"></i>
             </div>
             <h3>Technical Support</h3>
-            <p>Troubleshoot issues, setup guides, and technical assistance</p>
+            <p>
+              Comprehensive troubleshooting, installation guides, and expert
+              technical assistance
+            </p>
           </div>
 
           <div class="support-card">
@@ -502,7 +513,10 @@
               <i data-lucide="credit-card"></i>
             </div>
             <h3>Account & Payment</h3>
-            <p>Manage your account, payment methods, and billing information</p>
+            <p>
+              Manage account settings, update payment methods, and access
+              billing information
+            </p>
           </div>
 
           <div class="support-card">
@@ -511,7 +525,8 @@
             </div>
             <h3>Warranty & Repairs</h3>
             <p>
-              Check warranty coverage, register products, or request repairs
+              Verify warranty coverage, register products, and submit repair
+              requests
             </p>
           </div>
         </div>
@@ -521,47 +536,59 @@
     <!-- How We Support You -->
     <section style="background: var(--bg-darker)">
       <div class="container">
-        <h2 class="section-title">How We Support You</h2>
+        <h2 class="section-title">Support Channels</h2>
         <p class="section-subtitle">
-          Multiple ways to get the help you need, when you need it
+          Choose from our comprehensive support options to get assistance when
+          you need it most
         </p>
 
         <div class="support-channels">
           <div class="channel-card">
             <div class="channel-icon">
-              <i data-lucide="message-circle"></i>
-            </div>
-            <h3>Live Chat</h3>
-            <p>
-              <span class="channel-highlight">Instant responses</span> powered
-              by Typewise AI. Get answers in seconds, 24/7.
-            </p>
-          </div>
-
-          <div class="channel-card">
-            <div class="channel-icon">
               <i data-lucide="mail"></i>
             </div>
-            <h3>Email Support</h3>
+            <h3>Instant Email Support</h3>
             <p>
-              <span class="channel-highlight">Instant email responses</span> for
-              complex issues.
+              <span class="channel-highlight">Get instant responses</span> to
+              your inquiries with our advanced AI-powered email support system.
+              Receive detailed, accurate answers to complex technical questions
+              and product inquiries within minutes.
               <a
                 href="mailto:019a309a-d10c-720a-96e4-3fc6ddf5ca46@inbound.typewise.app"
-                style="color: var(--accent-blue); text-decoration: none"
-                >Contact us directly</a
-              >.
+                style="
+                  color: #60a5fa;
+                  text-decoration: none;
+                  font-weight: 500;
+                  font-size: 0.95rem;
+                  background: rgba(96, 165, 250, 0.1);
+                  padding: 0.25rem 0.75rem;
+                  border-radius: 9999px;
+                  border: 1px solid rgba(96, 165, 250, 0.2);
+                  display: inline;
+                  transition: all 0.2s ease;
+                "
+                onmouseover="this.style.background='rgba(96, 165, 250, 0.15)'; this.style.borderColor='rgba(96, 165, 250, 0.3)'"
+                onmouseout="this.style.background='rgba(96, 165, 250, 0.1)'; this.style.borderColor='rgba(96, 165, 250, 0.2)'"
+                >Start your conversation</a
+              >
             </p>
           </div>
 
           <div class="channel-card">
             <div class="channel-icon">
-              <i data-lucide="phone"></i>
+              <i data-lucide="message-circle"></i>
             </div>
-            <h3>Phone Support</h3>
+            <h3>Live Chat Support</h3>
             <p>
-              Speak directly with our team. Available
-              <span class="channel-highlight">Mon-Fri 8AM-8PM</span>.
+              <span class="channel-highlight">Connect instantly</span> with our
+              support team through our live chat system. Available 24/7 for
+              immediate assistance with urgent questions, order modifications,
+              and real-time problem resolution.
+              <strong
+                >You can find the live chat widget at the bottom of this
+                page</strong
+              >
+              - simply click to start chatting with our expert support team.
             </p>
           </div>
         </div>
@@ -571,66 +598,58 @@
     <!-- Popular Topics -->
     <section>
       <div class="container">
-        <h2 class="section-title">Popular Topics</h2>
+        <h2 class="section-title">Frequently Asked Questions</h2>
         <p class="section-subtitle">
-          Quick answers to frequently asked questions
+          Find quick answers to our most commonly asked questions
         </p>
 
         <div class="faq-list">
           <div class="faq-item">
-            <h4>How long does delivery take?</h4>
+            <h4>What are your delivery timeframes?</h4>
             <p>
-              Standard delivery takes 3-5 business days. Express delivery is
-              available for next-day delivery in most areas.
+              Standard delivery is completed within 3-5 business days. Express
+              delivery options are available for next-day delivery in most
+              metropolitan areas.
             </p>
           </div>
 
           <div class="faq-item">
-            <h4>What is your return policy?</h4>
+            <h4>What is your return and refund policy?</h4>
             <p>
-              We offer a 30-day return policy on most items. Products must be in
-              original condition with all packaging and accessories.
+              We provide a 30-day return window for most products. Items must be
+              returned in original condition with complete packaging and all
+              included accessories.
             </p>
           </div>
 
           <div class="faq-item">
-            <h4>Do you offer price matching?</h4>
+            <h4>Do you offer competitive price matching?</h4>
             <p>
-              Yes! We match prices from authorized retailers. Contact us with
-              the competitor's price and we'll match it.
+              Yes, we provide price matching for authorized retailers. Submit
+              the competitor's pricing details and we will match the offer.
             </p>
           </div>
 
           <div class="faq-item">
-            <h4>How do I track my order?</h4>
+            <h4>How can I track my order status?</h4>
             <p>
-              You'll receive a tracking number via email once your order ships.
-              Use it on our tracking page or the carrier's website.
+              A tracking number will be sent to your email upon shipment. Use
+              this number on our order tracking page or the carrier's website
+              for real-time updates.
             </p>
           </div>
 
           <div class="faq-item">
-            <h4>What payment methods do you accept?</h4>
+            <h4>What payment methods are accepted?</h4>
             <p>
               We accept all major credit cards, PayPal, Apple Pay, and Google
-              Pay. Financing options are available for purchases over $500.
+              Pay. Flexible financing options are available for purchases
+              exceeding $500.
             </p>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- CTA Section -->
-    <div class="cta-section">
-      <h2>Can't Find What You're Looking For?</h2>
-      <p>Our support team is ready to help you with any questions</p>
-      <button
-        class="cta-button"
-        onclick="alert('This is where the Typewise chat widget would open!\n\nIn a real implementation, this would trigger the Typewise chat interface.')"
-      >
-        Start Live Chat
-      </button>
-    </div>
 
     <!-- Footer -->
     <footer>
@@ -680,7 +699,7 @@
           &copy; 2025 ElectroMart. All rights reserved. This is a demo page.
         </p>
         <p class="powered-by">
-          Customer support powered by
+          Customer support technology powered by
           <a href="https://www.typewise.app/" target="_blank">Typewise</a>
         </p>
       </div>

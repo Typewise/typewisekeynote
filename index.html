@@ -16,13 +16,19 @@
         --primary-blue: #3c70f6;
         --primary-blue-dark: #1b51c5;
         --accent-blue: #2076ff;
+        --success-green: #10b981;
+        --warning-orange: #f59e0b;
+        --error-red: #ef4444;
         --bg-dark: #0a0e1a;
         --bg-darker: #050811;
         --text-white: #ffffff;
-        --text-light-gray: rgba(255, 255, 255, 0.8);
-        --text-muted: rgba(255, 255, 255, 0.6);
-        --border-dark: rgba(255, 255, 255, 0.1);
-        --card-bg: rgba(255, 255, 255, 0.05);
+        --text-light-gray: rgba(255, 255, 255, 0.85);
+        --text-muted: rgba(255, 255, 255, 0.65);
+        --border-dark: rgba(255, 255, 255, 0.12);
+        --card-bg: rgba(255, 255, 255, 0.06);
+        --gradient-primary: linear-gradient(135deg, #3c70f6, #1b51c5);
+        --gradient-success: linear-gradient(135deg, #10b981, #059669);
+        --gradient-warning: linear-gradient(135deg, #f59e0b, #d97706);
       }
 
       body {
@@ -124,8 +130,37 @@
         font-size: 1.5rem;
         color: var(--text-light-gray);
         max-width: 750px;
-        margin: 0 auto 3rem;
+        margin: 0 auto 2rem;
         position: relative;
+      }
+
+      .search-container {
+        max-width: 600px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .search-bar {
+        width: 100%;
+        padding: 1rem 1.5rem;
+        font-size: 1.125rem;
+        background: rgba(255, 255, 255, 0.1);
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        color: var(--text-white);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+
+      .search-bar::placeholder {
+        color: var(--text-muted);
+      }
+
+      .search-bar:focus {
+        outline: none;
+        border-color: var(--primary-blue);
+        background: rgba(255, 255, 255, 0.15);
+        box-shadow: 0 0 0 3px rgba(60, 112, 246, 0.2);
       }
 
       /* Container */
@@ -187,16 +222,23 @@
       .support-card-icon {
         width: 48px;
         height: 48px;
-        background: linear-gradient(
-          135deg,
-          var(--primary-blue),
-          var(--primary-blue-dark)
-        );
+        background: var(--gradient-primary);
         border-radius: 12px;
         display: flex;
         align-items: center;
         justify-content: center;
         margin-bottom: 1rem;
+        box-shadow: 0 4px 12px rgba(60, 112, 246, 0.3);
+      }
+
+      .support-card:nth-child(2) .support-card-icon {
+        background: var(--gradient-success);
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      }
+
+      .support-card:nth-child(3) .support-card-icon {
+        background: var(--gradient-warning);
+        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
       }
 
       .support-card-icon svg {
@@ -234,16 +276,18 @@
       .channel-icon {
         width: 80px;
         height: 80px;
-        background: linear-gradient(
-          135deg,
-          var(--primary-blue),
-          var(--primary-blue-dark)
-        );
+        background: var(--gradient-primary);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 1.5rem;
+        margin: 0 auto 1rem;
+        box-shadow: 0 6px 20px rgba(60, 112, 246, 0.4);
+      }
+
+      .channel-card:last-child .channel-icon {
+        background: var(--gradient-success);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
       }
 
       .channel-icon svg {
@@ -254,8 +298,20 @@
 
       .channel-card h3 {
         font-size: 1.5rem;
-        margin-bottom: 0.75rem;
+        margin-bottom: 0.5rem;
         color: var(--text-white);
+      }
+
+      .response-time {
+        display: inline-block;
+        background: rgba(96, 165, 250, 0.2);
+        color: #60a5fa;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        border: 1px solid rgba(96, 165, 250, 0.3);
       }
 
       .channel-card p {
@@ -404,27 +460,105 @@
       /* Responsive */
       @media (max-width: 768px) {
         .hero {
-          padding: 8rem 2rem;
+          padding: 6rem 1.5rem;
           min-height: 50vh;
         }
 
         .hero h1 {
-          font-size: 3.5rem;
+          font-size: 3rem;
+          margin-bottom: 1.5rem;
         }
 
         .hero p {
-          font-size: 1.25rem;
+          font-size: 1.125rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .search-bar {
+          padding: 0.875rem 1.25rem;
+          font-size: 1rem;
         }
 
         .section-title {
           font-size: 2rem;
         }
 
+        .section-subtitle {
+          font-size: 1rem;
+        }
+
         nav {
-          gap: 1rem;
+          gap: 0.75rem;
+          flex-wrap: wrap;
+        }
+
+        nav a {
+          font-size: 0.9rem;
         }
 
         .support-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .support-card {
+          padding: 1.5rem;
+        }
+
+        .support-channels {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+
+        .channel-card {
+          padding: 1.5rem;
+        }
+
+        .faq-item {
+          padding: 1.25rem;
+        }
+
+        .cta-section {
+          padding: 3rem 1.5rem;
+        }
+
+        .cta-section h2 {
+          font-size: 2rem;
+        }
+
+        .cta-section p {
+          font-size: 1.125rem;
+        }
+
+        .footer-content {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .search-bar {
+          padding: 0.75rem 1rem;
+          font-size: 0.95rem;
+        }
+
+        .support-card {
+          padding: 1.25rem;
+        }
+
+        .channel-card {
+          padding: 1.25rem;
+        }
+
+        .footer-content {
           grid-template-columns: 1fr;
         }
       }
@@ -452,6 +586,13 @@
         your inquiries. Our dedicated team provides round-the-clock support for
         orders, products, and technical solutions.
       </p>
+      <div class="search-container">
+        <input
+          type="text"
+          class="search-bar"
+          placeholder="Search for help articles, FAQs, or support topics..."
+        />
+      </div>
     </section>
 
     <!-- Support Categories -->
@@ -547,6 +688,7 @@
             <div class="channel-icon">
               <i data-lucide="mail"></i>
             </div>
+            <div class="response-time">Response time: 10-30 seconds</div>
             <h3>Instant Email Support</h3>
             <p>
               <span class="channel-highlight">Get instant responses</span> to
@@ -578,6 +720,7 @@
             <div class="channel-icon">
               <i data-lucide="message-circle"></i>
             </div>
+            <div class="response-time">Response time: 10-30 seconds</div>
             <h3>Live Chat Support</h3>
             <p>
               <span class="channel-highlight">Connect instantly</span> with our
